@@ -1,7 +1,15 @@
 {
+  "id": "recall-knowledge-helper",
   "name": "recall-knowledge-helper",
   "title": "Recall Knowledge Helper",
-  "description": "TBD",
+  "description": "Recall Knowledge Helper",
+  "version": "0.0.1",
+  "minimumCoreVersion": "10.291",
+  "compatibleCoreVersion": "10",
+  "compatibility": {
+    "minimum": "10.291",
+    "verified": 10
+  },
   "authors": [
     {
       "name": "Kenster421",
@@ -10,24 +18,8 @@
       "discord": "k_to_the_w#1736"
     }
   ],
-  "url": "https://github.com/kenster421/tbd",
-  "flags": {},
-  "version": "0.0.1",
-  "minimumCoreVersion": "0.8.9",
-  "compatibleCoreVersion": "10",
-  "esmodules": [
-    "main.js"
-  ],
-  "scripts": [],
-  "styles": [
-    "./styles/styles.css"
-  ],
-  "system": [],
-  "dependencies": [],
-  "socket": false,
-  "manifest": "tbd",
-  "download": "tbd",
-  "protected": false,
-  "coreTranslation": false,
-  "library": false
+  "esmodules": ["main.js"],
+  "styles": ["./styles/styles.css"],
+  "packs": [],
+  "url": "https://github.com/kenster421/recall-knowledge-helper"
 }
