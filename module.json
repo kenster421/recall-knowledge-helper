@@ -4,6 +4,8 @@
   "title": "Recall Knowledge Helper",
   "description": "Recall Knowledge Helper",
   "version": "0.0.1",
+  "download": "https://github.com/kenster421/recall-knowledge-helper/releases/download/v0.0.1/module.zip",
+  "manifest": "https://github.com/kenster421/recall-knowledge-helper/blob/master/module.json",
   "minimumCoreVersion": "10.291",
   "compatibleCoreVersion": "10",
   "compatibility": {
