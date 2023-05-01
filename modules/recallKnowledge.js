@@ -15,23 +15,34 @@ export default class RecallKnowledge {
     }
   };
 
-  static activatePlayerPopup(popup) {
+  static activatePlayerPopup(popup, element, data) {
     const playerOptions = game.actors.filter(a => a.type === 'character').map(function (actor) {
       return {
         icon: `<img src="${actor.img}" style="height:1.5em;" />`,
         label: actor.name,
         callback: async (html) => {
-          const filteredSkills = Object.values(actor.data.data.skills).filter(s => popup.data.skills.has(s.slug) || s.lore);
+          const filteredSkills = Object.values(actor.data.data.skills).filter(s => data.standard.label.toLowerCase().includes(s.slug) || s.lore);
 
           let d20 = new Roll("1d20");
           d20.roll({ async: false });
-          let roll = d20._total;
+          let roll = '';
+          switch(d20._total) {
+            case 20:
+              roll = "<span style='font-weight:bold;color:#008000 !important;'>20</span>";
+              break;
+            case 1:
+              roll = "<span style='font-weight:bold;color:#ff0000 !important;'>1</span>";
+              break;
+            default:
+              roll = `<span style='font-weight:bold;'>${d20._total}</span>`;
+              break;
+          }
 
           let results = '';
           filteredSkills.forEach(function (skill, key) {
             const skillBonus = skill.totalModifier;
-            let rollResult = roll + skillBonus;
-            results += `<p>${skill.slug.toUpperCase()}: ${roll} + ${skillBonus} = ${rollResult}</p>`;
+            let rollResult = d20._total + skillBonus;
+            results += `<p>${skill.lore ? skill.label : skill.slug.toUpperCase()}: ${roll} + ${skillBonus} = ${rollResult}</p>`;
           });
 
           let chatContent = `

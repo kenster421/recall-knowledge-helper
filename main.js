@@ -9,5 +9,5 @@ Hooks.on(RecallKnowledge.POPUP, async (popup, element, data) => {
 });
 
 function activatePlayerPopup(popup, element, data) {
-  RecallKnowledge.activatePlayerPopup(popup);
+  RecallKnowledge.activatePlayerPopup(popup, element, data);
 }
